@@ -44,7 +44,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   Polymer.Base._finishDistribute = function() {
     var hasDistributed = this.root._hasDistributed;
     baseFinishDistribute.call(this);
-    if (!hasDistributed) {
+    if (!hasDistributed && this._useContent) {
       for (var n=this.firstChild; n; n=n.nextSibling) {
         Polymer.dom(n);
       };
